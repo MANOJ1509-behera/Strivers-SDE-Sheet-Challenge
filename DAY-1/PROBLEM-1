@@ -1,1 +1,31 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution 
+{
+    public static void sort012(int[] arr)
+    {
+         int zero = 0;
+         int one = 0;
+         int two = arr.length -1;
+        
 
+         while(one <= two){
+             if(arr[one] == 1) one++;
+             else if(arr[one] == 2){
+                 int num = arr[two];
+                 arr[two] = arr[one];
+                 arr[one] = num;
+                 two--;
+
+             }else{
+                 int val = arr[zero];
+                 arr[zero] =arr[one];
+                 arr[one] = val;
+                 zero++;
+                 one++;
+
+             }
+         }
+        
+    }
+}
