@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.* ;
+
+/*
+	Following is the structure of the Singly Linked List.	
+	class LinkedListNode<T> 
+    {
+    	T data;
+    	LinkedListNode<T> next;
+    	public LinkedListNode(T data) 
+        {
+        	this.data = data;
+    	}
+	}
+
+*/
+public class Solution 
+{
+    public static LinkedListNode<Integer> reverseLinkedList(LinkedListNode<Integer> head) 
+    {
+        ArrayList<Integer> al = new ArrayList<>();
+		LinkedListNode<Integer> temp = head;
+
+		if(head == null || head.next == null) return head;
+		
+		while(temp != null){
+			al.add(temp.data);
+			temp = temp.next;
+		}
+
+		int i = al.size() -1;
+		temp = head;
+		while(temp != null){
+			temp.data = al.get(i);
+			i--;
+			temp = temp.next;
+
+			
+		}
+
+		return head;
+    }
+}
