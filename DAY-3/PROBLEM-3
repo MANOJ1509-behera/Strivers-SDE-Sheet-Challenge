@@ -1,0 +1,43 @@
+
+public class Solution {
+
+	public static boolean isPalindrome(LinkedListNode<Integer> head) {
+
+
+		   
+          LinkedListNode<Integer> temp=head;
+           LinkedListNode<Integer> etemp=head;
+             int count=0;
+             int i=0;
+      
+            
+      while(temp != null){
+        temp=temp.next;
+        count++;
+      }
+      
+      int[] ans=new int[count];
+      
+      while(etemp != null){
+        ans[i]=etemp.data;
+        etemp=etemp.next;
+        i++;
+        
+      }
+      
+      int first=0;
+      int last=ans.length-1 ;
+      
+      while(first <= last){
+        if(ans[first] == ans[last] ){
+          first++;
+          last--;
+        } else{
+          return false;
+        }
+        
+      }
+      
+      return true;
+    }
+}
